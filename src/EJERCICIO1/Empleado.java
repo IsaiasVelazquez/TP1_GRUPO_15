@@ -1,9 +1,11 @@
 package EJERCICIO1;
 
+import java.time.LocalDate;
+
 public class Empleado extends Persona {
-	private int legajo;
-	String Puesto;
-	private static int cont=1000;
+	private final int legajo; //final, para que sea una variable que no se pueda modificar
+	private String Puesto;
+	private static int cont = 999; //PARA QUE EL 1ER LEG SEA 1000
 	
 	//constructor
 	public Empleado() {
@@ -12,7 +14,7 @@ public class Empleado extends Persona {
 	    this.legajo = cont;
 	}
 
-	public Empleado(String dni , String nombre , String apellido , java.time.LocalDate fechadenacimiento , 
+	public Empleado(String dni , String nombre , String apellido , LocalDate fechadenacimiento , 
 	 		String genero , String email , String direccion , String telefono , String puesto) {
 	    super(dni, nombre, apellido, fechadenacimiento, genero, email, direccion, telefono);
 	    cont++;
@@ -20,19 +22,19 @@ public class Empleado extends Persona {
 	    this.Puesto = puesto;
 	}
 
-	//metodos
+	//METODO ESTATICO
 	public static int devuelveProximoLegajo() {
-		return cont++;
+		return cont+1;
 	}
 
 	//GETTER Y SETTER
 	public int getLegajo() {
 		return legajo;
 	}
-
+	/*
 	public void setLegajo(int legajo) {
 		this.legajo = legajo;
-	}
+	}*/ //EL LEGAJO NO SE DEBE SETTEAR
 
 	public String getPuesto() {
 		return Puesto;
@@ -45,7 +47,7 @@ public class Empleado extends Persona {
 	// metodo toString
 	@Override
 	public String toString() {
-		return "Empleado [legajo=" + legajo + ", Puesto=" + Puesto + "]";
+		return super.toString() +"Empleado [legajo=" + legajo + ", Puesto=" + Puesto + "]";
 	}
 	
 	

@@ -1,23 +1,25 @@
 package EJERCICIO1;
 
+import java.time.LocalDate;
+
 public class Persona {
 	
-	String dni;
-	String nombre;
-	String apellido;
-	java.time.LocalDate fechadenacimiento; 
-	String genero;
-	String telefono;
-	String direccion;
-	String email;
+	private String dni;
+	private String nombre;
+	private String apellido;
+	private LocalDate fechadenacimiento; 
+	private String genero;
+	private String telefono;
+	private String direccion;
+	private String email;
 	
 	//constructores 
 	public Persona() {
 		nombre="sin nombre";
-		fechadenacimiento =java.time.LocalDate.of(2025, 1, 1);
+		fechadenacimiento = LocalDate.of(2025, 1, 1);
 	}
-	public Persona(String dni , String nombre , String apellido , java.time.LocalDate fechadenacimiento , 
-			String genero , String email , String direccion , String telefono) 
+	public Persona(String dni , String nombre , String apellido ,LocalDate fechadenacimiento,
+					String genero , String email , String direccion , String telefono) 
 	{
 		this.dni = dni;
 		this.nombre = nombre;
@@ -90,7 +92,7 @@ public class Persona {
 		return fechadenacimiento;
 	}
 
-	public void setFechadenacimiento(java.time.LocalDate fechadenacimiento) {
+	public void setFechadenacimiento(LocalDate fechadenacimiento) {
 		this.fechadenacimiento = fechadenacimiento;
 	}
 
