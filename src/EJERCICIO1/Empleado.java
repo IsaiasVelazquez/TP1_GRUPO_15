@@ -2,6 +2,7 @@ package EJERCICIO1;
 
 import java.time.LocalDate;
 
+
 public class Empleado extends Persona {
 	private final int legajo; //final, para que sea una variable que no se pueda modificar
 	private String Puesto;
@@ -31,10 +32,6 @@ public class Empleado extends Persona {
 	public int getLegajo() {
 		return legajo;
 	}
-	/*
-	public void setLegajo(int legajo) {
-		this.legajo = legajo;
-	}*/ //EL LEGAJO NO SE DEBE SETTEAR
 
 	public String getPuesto() {
 		return Puesto;
@@ -47,7 +44,8 @@ public class Empleado extends Persona {
 	// metodo toString
 	@Override
 	public String toString() {
-		return super.toString() +"Empleado [legajo=" + legajo + ", Puesto=" + Puesto + "]";
+		return super.toString() + " Además, es empleado con legajo número " + legajo +
+		           " y ocupa el puesto de " + Puesto + ".";
 	}
 	
 	

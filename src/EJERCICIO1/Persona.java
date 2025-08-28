@@ -1,6 +1,7 @@
 package EJERCICIO1;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Persona {
 	
@@ -12,6 +13,9 @@ public class Persona {
 	private String telefono;
 	private String direccion;
 	private String email;
+	
+	private static final DateTimeFormatter fechaform =
+		    DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	
 	//constructores 
 	public Persona() {
@@ -88,7 +92,7 @@ public class Persona {
 		this.email = email;
 	}
 
-	public java.time.LocalDate getFechadenacimiento() {
+	public LocalDate getFechadenacimiento() {
 		return fechadenacimiento;
 	}
 
@@ -98,9 +102,12 @@ public class Persona {
 
 	@Override
 	public String toString() {
-		return "Persona [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", fechadenacimiento="
-				+ fechadenacimiento + ", genero=" + genero + ", telefono=" + telefono + ", direccion=" + direccion
-				+ ", email=" + email + "]";
+		return "La persona con DNI " + dni + " se llama " + nombre + " " + apellido +
+		           ", nació el " + fechadenacimiento.format(fechaform) +
+		           ", es de género " + genero +
+		           ", vive en " + direccion +
+		           ", su número de teléfono es " + telefono +
+		           " y su correo electrónico es " + email + ".";
 	}
 
 	

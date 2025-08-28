@@ -18,7 +18,7 @@ public class Principal {
 		for (Empleado empleado : vecEmpleados) {
 			System.out.println(empleado.toString());
 		}
-		System.out.println("“El próximo legajo será el " + Empleado.devuelveProximoLegajo());
+		System.out.println("El próximo legajo será el " + Empleado.devuelveProximoLegajo());
 
 	}
 
